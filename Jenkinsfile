@@ -1,11 +1,11 @@
 Pipelines{
     agent any
 
-    stages{
-        stage('Build Artificat')
-        steps{
-          sh "mvn clean package -DskipTests=true"
-          archive 'target/* .jar'   
-        }
+   stage('Build Artifact - Maven') {
+      steps {
+        sh "mvn clean package -DskipTests=true"
+        archive 'target/*.jar'
+      }
     }
 }
+
